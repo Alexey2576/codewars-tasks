@@ -1,6 +1,7 @@
-function repeatStr (n, s) {
-  let str = "";
-  for (let i = 0; i < n; i++)
-    str += s;
-  return str;
+function boolToWord(bool) {
+  if (bool === true) {
+    return "Yes"
+  }
+  else
+    return "No"
 }
