@@ -12,7 +12,7 @@ function accum(s) {
         newStr += el.toLowerCase();
     }
   })
-  return console.log(newStr.substr(1))
+  return newStr.substr(1);
 }
 
 accum("ZpglnRxqenU");
