@@ -1,40 +1,51 @@
-function digital_root(n) {
-  let strNum = String(n);
-  let result = strNum;
-  while (result > 9 ) {
-    result = 0;
-    for (let i = 0; i < strNum.length; i++)
-      result += Number(strNum[i]);
-    if (result > 9)
-      strNum = String(result)
-  }
-  return result;
-}
-console.log(digital_root(458));
+let input = document.querySelector("input");
+let button = document.querySelector("button");
 
-// var strNum = prompt("Введите число", "");
-// var result = 0;
-//
-// // Простой вариант, если число в виде строки
-// for (var i = 0; i < strNum.length; i++)
-//   result += Number(strNum[i]);
-//
-// console.log(result);
-//
-// // Вариант с числами
-// var nums = prompt("Введите число", "");
-// var length = nums.length;      // Количество цифр
-// nums = Number(nums);           // Переводим строку в число
-//
-// var temp = 0;                  // Для хранения цифр
-// var result = 0;                // Конечный результат
-//
-// for (var i = 0; i < length; i++) {
-//   temp = nums % 10;            // Сохраняем цифру в переменной
-//   result += temp;              // Складываем цифры числа
-//   nums = parseInt(nums /10);   // Переходим к следующей цифре в числе
-// }
-//
-//
-// console.log(result);
-//
+let obj = [
+  {name: 'Vasya', age: 4},
+  {name: 'Murka', age: 1.5},
+  {name: 'Varna', age: 21},
+  {name: 'Kesha', age: 3},
+];
+
+let num = [2, 45, 546, 1, 665645, 3, 56];
+
+let a = "1";
+let b = "2";
+let c = a;
+a = b;
+b = c;
+console.log(a); // то что было изначально в b
+console.log(b); // то что было изначально в a
+
+button.addEventListener("click", function () {
+  let message = input.value;
+  setTimeout(() => {
+      let text = " " + obj[0].name + " " + superSum(1, 2) + " " + findMax(num);
+      if (message === "google")
+        alert("Yandex круче. Но это не точно" + text);
+      else
+        alert(message + text);
+    }, 3000)
+  }
+);
+
+superSum = (a, b) => {
+  return a + b;
+}
+
+findMax = (array) => {
+  let max = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (max < array[i]) max = array[i];
+  }
+  return max;
+}
+
+findMin = (array) => {
+  let min = array[0];
+  for (let i = 0; i < array.length; i++) {
+    if (min > array[i]) min = array[i];
+  }
+  return min;
+}
