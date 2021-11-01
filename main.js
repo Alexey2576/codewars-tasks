@@ -6,13 +6,12 @@ function longestConsec(strarr, k) {
       for (let i = a; i < k; i++) {
         if (k > strarr.length)
           {
-            let c = 0;
-            let maxStr = mass[0].length;
+            let maxStr = mass[0];
             for (let x = 0; x < mass.length; x++) {
-              if (maxStr < mass[x].length)
-                c = x;
+              if (maxStr.length < mass[x].length)
+                maxStr = mass[x];
             }
-            return console.log(mass[c]);
+            return console.log(maxStr);
           }
         else
           string = string.concat(strarr[i]);
@@ -35,4 +34,4 @@ function longestConsec(strarr, k) {
 }
 
 
-longestConsec(["zoneeeeeeeeeee", "abigail", "theta", "form", "libe", "zasssssss"], 6)
+longestConsec(["zone", "abigail", "thetaaaaaaaaa", "formm", "libennnnn", "zass"], 2)
