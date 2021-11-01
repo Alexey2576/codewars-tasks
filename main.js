@@ -1,16 +1,23 @@
-function removeSmallest(numbers) {
-  let minEl = numbers[0];
-  for (let i = 0; i < numbers.length; i++) {
-    if (minEl > numbers[i])
-      minEl = numbers[i];
+//return the total number of smiling faces in the array
+function countSmileys(arr) {
+  let count = 0;
+  for (let i = 0; i < arr.length; i++) {
+    if (arr[i].includes(":") || arr[i].includes(";")) {
+        if (arr[i].length === 3) {
+          if (arr[i].includes("-") || arr[i].includes("~")) {
+            if (arr[i].includes(")") || arr[i].includes("D")) {
+              count++;
+            }
+          }
+        }
+        else if (arr[i].length === 2) {
+          if (arr[i].includes(")") || arr[i].includes("D")) {
+            count++;
+          }
+        }
+    }
   }
-  let newArr = numbers.slice(0);
-  newArr.splice(newArr.indexOf(minEl), 1);
-  return console.log(newArr);
+  return console.log(count);
 }
 
-removeSmallest([1, 2, 3, 4, 5]);
-removeSmallest([5, 3, 2, 1, 4]);
-removeSmallest([5, 1, 2, 1, 4]);
-removeSmallest([2, 2, 1, 2, 1]);
-removeSmallest([]);
+countSmileys([':D',':~)',';~D',':)']);
