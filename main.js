@@ -1,14 +1,10 @@
-function twoSum(numbers, target) {
-  for (let x = 0; x < numbers.length; x++) {
-    for (let y = 1; y < numbers.length; y++ ) {
-      if (x !== y) {
-        if ((numbers[x] + numbers[y]) === target) {
-          return console.log([x, y]);
-        }
-      }
-    }
-  }
+function sortArray(array) {
+  var indices = [];
+  array
+    .filter((v, i) => v % 2 && indices.push(i))
+    .sort((a, b) => a - b)
+    .forEach((v, i) => array[indices[i]] = v);
+  return array;
 }
+sortArray([5, 3, 2, 8, 1, 4])
 
-twoSum([1,2,3], 4);
-twoSum([3,2,4], 6);
