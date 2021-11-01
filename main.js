@@ -1,23 +1,14 @@
-//return the total number of smiling faces in the array
-function countSmileys(arr) {
-  let count = 0;
-  for (let i = 0; i < arr.length; i++) {
-    if (arr[i].includes(":") || arr[i].includes(";")) {
-        if (arr[i].length === 3) {
-          if (arr[i].includes("-") || arr[i].includes("~")) {
-            if (arr[i].includes(")") || arr[i].includes("D")) {
-              count++;
-            }
-          }
+function twoSum(numbers, target) {
+  for (let x = 0; x < numbers.length; x++) {
+    for (let y = 1; y < numbers.length; y++ ) {
+      if (x !== y) {
+        if ((numbers[x] + numbers[y]) === target) {
+          return console.log([x, y]);
         }
-        else if (arr[i].length === 2) {
-          if (arr[i].includes(")") || arr[i].includes("D")) {
-            count++;
-          }
-        }
+      }
     }
   }
-  return console.log(count);
 }
 
-countSmileys([':D',':~)',';~D',':)']);
+twoSum([1,2,3], 4);
+twoSum([3,2,4], 6);
