@@ -1,21 +1,24 @@
-function high(x){
-  let ab = "abcdefghijklmnopqrstuvwxyz".split("");
-  let mass = x.split(" ");
-  let newMass = mass.map(el => {
-    let massEl = el.split("");
-    let a = 0;
-    massEl.forEach(x => {
-      a += (ab.indexOf(x) + 1);
-    })
-    return a;
+function upArray(arr) {
+  if (arr.length === 0)
+    return null;
+  let str = "";
+  arr.forEach(el => {
+    str += el;
   })
 
-  let maxEl = newMass[0];
-  for (let i = 0; i < newMass.length; i++) {
-    if (maxEl < newMass[i])
-      maxEl = newMass[i]
+  if (str.includes("-"))
+    return null;
+  else if (arr.length !== str.length)
+    return null;
+  else {
+    let big = Number.parseInt(str);
+
+    return console.log((big)
+      .toString()
+      .split("")
+      .map(el => parseInt(el)));
   }
-  return mass[newMass.indexOf(maxEl)]
 }
 
-high('man i need a taxi up to ubud taxi');
+upArray([9, 2, 2, 3, 3, 7, 2, 0, 3, 6, 8, 5, 4, 7, 7, 5, 8, 0, 7])
+upArray([1, -9])
