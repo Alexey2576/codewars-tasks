@@ -1,16 +1,9 @@
-function expandedForm(num) {
-  let str = num.toString().split("");
-  let length = str.length;
-  let sum = "";
-  str.forEach(el => {
-    if (el !== "0") {
-      sum = sum + ` + ${el * Math.pow(10, length-1)}`;
-    }
-    length--;
-  })
-  return sum.substr(3);
+function isPangram(string){
+  return console.log(new Set(string
+    .toLowerCase()
+    .replace(/[^a-z]/g, '')
+  ).size === 26)
 }
 
-expandedForm(12);
-expandedForm(42);
-expandedForm(70304);
+isPangram("The quick brown fox jumps over the lazy dog.")
+isPangram("This is not a pangram.")
