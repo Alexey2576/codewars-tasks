@@ -1,46 +1,15 @@
-// Setup
-const contacts = [
-  {
-    firstName: "Akira",
-    lastName: "Laine",
-    number: "0543236543",
-    likes: ["Pizza", "Coding", "Brownie Points"],
-  },
-  {
-    firstName: "Harry",
-    lastName: "Potter",
-    number: "0994372684",
-    likes: ["Hogwarts", "Magic", "Hagrid"],
-  },
-  {
-    firstName: "Sherlock",
-    lastName: "Holmes",
-    number: "0487345643",
-    likes: ["Intriguing Cases", "Violin"],
-  },
-  {
-    firstName: "Kristian",
-    lastName: "Vos",
-    number: "unknown",
-    likes: ["JavaScript", "Gaming", "Foxes"],
-  },
-];
-
-function lookUpProfile(name, prop) {
-  // Only change code below this line
-  let p = ""
-  for (let i = 0; i < contacts.length; i++) {
-    if (contacts[i]["firstName"] === name) {
-      if (contacts[i].hasOwnProperty(prop))
-        p = contacts[i][prop];
-      else
-        p = "No such property"
-    }
+function sumTwoSmallestNumbers(numbers) {
+  compare = (a, b) => {
+    if (a < b)
+      return -1
+    if (a === b)
+      return 0;
+    if (a > b)
+      return 1;
   }
-  if (p === "")
-    p = "No such contact"
-  return p;
-  // Only change code above this line
+  numbers.sort(compare);
+  return console.log(`Sum should be ${numbers[0] + numbers[1]}`)
 }
 
-lookUpProfile("Akira", "likes");
+sumTwoSmallestNumbers([5, 8, 12, 19, 22])
+sumTwoSmallestNumbers([15, 28, 4, 2, 43])
