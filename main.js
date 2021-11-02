@@ -1,10 +1,15 @@
-function sortArray(array) {
-  var indices = [];
-  array
-    .filter((v, i) => v % 2 && indices.push(i))
-    .sort((a, b) => a - b)
-    .forEach((v, i) => array[indices[i]] = v);
-  return array;
+function XO(str) {
+  let o = 0;
+  let x = 0;
+  str.split("").forEach(el => {
+    if(el.toLowerCase() === "o")
+      o++;
+    else if (el.toLowerCase() === "x")
+      x++;
+  })
+
+  if (!str.includes("x") && !str.includes("o"))
+    return true;
+  else return o === x;
 }
-sortArray([5, 3, 2, 8, 1, 4])
 
