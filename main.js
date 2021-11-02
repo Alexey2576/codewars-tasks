@@ -1,15 +1,16 @@
-function XO(str) {
-  let o = 0;
-  let x = 0;
-  str.split("").forEach(el => {
-    if(el.toLowerCase() === "o")
-      o++;
-    else if (el.toLowerCase() === "x")
-      x++;
+function expandedForm(num) {
+  let str = num.toString().split("");
+  let length = str.length;
+  let sum = "";
+  str.forEach(el => {
+    if (el !== "0") {
+      sum = sum + ` + ${el * Math.pow(10, length-1)}`;
+    }
+    length--;
   })
-
-  if (!str.includes("x") && !str.includes("o"))
-    return true;
-  else return o === x;
+  return sum.substr(3);
 }
 
+expandedForm(12);
+expandedForm(42);
+expandedForm(70304);
