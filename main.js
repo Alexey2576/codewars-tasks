@@ -1,9 +1,11 @@
-function isPangram(string){
-  return console.log(new Set(string
-    .toLowerCase()
-    .replace(/[^a-z]/g, '')
-  ).size === 26)
+function sum(arr, n) {
+  // Only change code below this line
+  if (n <= 0) {
+    return 0;
+  } else {
+    return console.log(sum(arr, n - 1) + arr[n - 1]);
+  }
+  // Only change code above this line
 }
 
-isPangram("The quick brown fox jumps over the lazy dog.")
-isPangram("This is not a pangram.")
+sum([1,2,3,4,5], 3)
