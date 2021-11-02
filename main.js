@@ -1,14 +1,21 @@
-function findUniq(arr) {
-  arr.sort((a, b) => {
-    if (a < b)
-      return -1;
-    if (a > b)
-      return 1;
-    if (a === b)
-      return 0
+function high(x){
+  let ab = "abcdefghijklmnopqrstuvwxyz".split("");
+  let mass = x.split(" ");
+  let newMass = mass.map(el => {
+    let massEl = el.split("");
+    let a = 0;
+    massEl.forEach(x => {
+      a += (ab.indexOf(x) + 1);
+    })
+    return a;
   })
-  if (arr[0] === arr[1])
-    return arr[arr.length-1]
-  else
-    return arr[0];
+
+  let maxEl = newMass[0];
+  for (let i = 0; i < newMass.length; i++) {
+    if (maxEl < newMass[i])
+      maxEl = newMass[i]
+  }
+  return mass[newMass.indexOf(maxEl)]
 }
+
+high('man i need a taxi up to ubud taxi');
