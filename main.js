@@ -1,23 +1,24 @@
-function iqTest(numbers){
-  let mass = numbers.split(" ");
-  let iOdd = 0;
-  let iEven = 0;
-  let countOdd = 0;
-  let countEven = 0;
-  mass.forEach((el, i, mass) => {
-    if (parseInt(el) % 2 === 0) {
-      iEven = i + 1;
-      countEven++;
-    } else {
-      iOdd = i + 1;
-      countOdd++;
+function dataReverse(data) {
+  let n = data.length/8;
+  let mass = [];
+  for (let i = 0; i < n; i++) {
+    let s = ""
+    for (let x = 0; x < 8; x++) {
+      s = s + data[x];
     }
-  })
-  if (countEven === 1)
-    return console.log(iEven);
-  else if (countOdd === 1)
-    return console.log(iOdd);
+    mass.push(s);
+    data = data.splice(8);
+  }
+  mass.reverse();
+  let str = "";
+  mass.forEach(el => str += el)
+  mass = str.split("")
+  return console.log(mass.map(el => parseInt(el)))
 }
 
-iqTest("2 4 7 8 10");
-iqTest("1 2 1 1 1");
+const data1 = [1,1,1,1,1,1,1,1,0,0,0,0,0,0,0,0,0,0,0,0,1,1,1,1,1,0,1,0,1,0,1,0]
+//const data2 = [1,0,1,0,1,0,1,0,0,0,0,0,1,1,1,1,0,0,0,0,0,0,0,0,1,1,1,1,1,1,1,1]
+dataReverse(data1)
+const data3 = [0,0,1,1,0,1,1,0,0,0,1,0,1,0,0,1]
+// const data4 = [0,0,1,0,1,0,0,1,0,0,1,1,0,1,1,0]
+dataReverse(data3)
