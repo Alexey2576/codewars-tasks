@@ -1,24 +1,23 @@
-function upArray(arr) {
-  if (arr.length === 0)
-    return null;
-  let str = "";
-  arr.forEach(el => {
-    str += el;
-  })
-
-  if (str.includes("-"))
-    return null;
-  else if (arr.length !== str.length)
-    return null;
+function tribonacci(signature,n){
+  let sum = 0;
+  if (n === 0)
+    return console.log([]);
+  else if (n < 3) {
+    let mass = [];
+    for (let i = 0; i < n; i++) {
+      mass.push(signature[i]);
+    }
+    return console.log(mass);
+  }
   else {
-    let big = Number.parseInt(str);
-
-    return console.log((big)
-      .toString()
-      .split("")
-      .map(el => parseInt(el)));
+    for (let i = 2; i < (n-1); i++) {
+      sum = signature[i] + signature[i-1] + signature[i-2];
+      signature.push(sum);
+    }
+    return console.log(signature);
   }
 }
-
-upArray([9, 2, 2, 3, 3, 7, 2, 0, 3, 6, 8, 5, 4, 7, 7, 5, 8, 0, 7])
-upArray([1, -9])
+tribonacci([1,1,1],1);
+tribonacci([0, 0, 0],10);
+// tribonacci([1,1,1],10);
+// tribonacci([0.5,0.5,0.5],30)
