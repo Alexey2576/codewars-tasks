@@ -1,31 +1,23 @@
-var isPP = function (n) {
-  var current = 2,
-    power = 2,
-    max = Math.floor( n / 2 );
-
-  while ( current <= max ) {
-    power = 2;
-    while ( Math.pow( current, power ) <= n ) {
-      if ( n === Math.pow( current, power ) ) {
-        return console.log([ current, power ]);
-      } else {
-        power += 1;
-      }
+function iqTest(numbers){
+  let mass = numbers.split(" ");
+  let iOdd = 0;
+  let iEven = 0;
+  let countOdd = 0;
+  let countEven = 0;
+  mass.forEach((el, i, mass) => {
+    if (parseInt(el) % 2 === 0) {
+      iEven = i + 1;
+      countEven++;
+    } else {
+      iOdd = i + 1;
+      countOdd++;
     }
-    current += 1;
-  }
-
-  return console.log(null);
+  })
+  if (countEven === 1)
+    return console.log(iEven);
+  else if (countOdd === 1)
+    return console.log(iOdd);
 }
 
-isPP(4) // 2, 2
-isPP(9) // 3, 2
-isPP(5) // null
-isPP(8) // 2, 3
-isPP(128) // 2, 7
-isPP(3707398432);
-isPP(61917364224);
-isPP(243);
-isPP(27136);
-
-
+iqTest("2 4 7 8 10");
+iqTest("1 2 1 1 1");
