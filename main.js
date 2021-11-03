@@ -1,17 +1,31 @@
-function domainName(url){
-  url = url.replace(/(https?:\/\/)?(www.)?/i, '');
+var isPP = function (n) {
+  var current = 2,
+    power = 2,
+    max = Math.floor( n / 2 );
 
-  if (url.indexOf('/') !== -1) {
-    url = url.split('/')[0];
+  while ( current <= max ) {
+    power = 2;
+    while ( Math.pow( current, power ) <= n ) {
+      if ( n === Math.pow( current, power ) ) {
+        return console.log([ current, power ]);
+      } else {
+        power += 1;
+      }
+    }
+    current += 1;
   }
 
-  if (url.indexOf('.') !== -1) {
-    url = url.split('.')[0];
-  }
-  return console.log(url);
+  return console.log(null);
 }
 
-domainName("http://google.com");
-domainName("http://google.co.jp");
-domainName("www.xakep.ru");
-domainName("https://youtube.com");
+isPP(4) // 2, 2
+isPP(9) // 3, 2
+isPP(5) // null
+isPP(8) // 2, 3
+isPP(128) // 2, 7
+isPP(3707398432);
+isPP(61917364224);
+isPP(243);
+isPP(27136);
+
+
