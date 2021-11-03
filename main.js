@@ -1,29 +1,17 @@
-function dashatize(num) {
-  let str = "";
-  let mass = num.toString().split("");
-  mass.forEach(el => {
-    if ((parseInt(el) % 2) > 0) {
-      if (str.substr(str.length-1, 1) === "-")
-        str = str + el + "-";
-      else
-        str = str + "-" + el + "-";
-    }
-    else
-      str = str + el;
-  })
-  if (str.substr(0, 1) === "-") {
-    str = str.substr(1, str.length-1);
+function domainName(url){
+  url = url.replace(/(https?:\/\/)?(www.)?/i, '');
+
+  if (url.indexOf('/') !== -1) {
+    url = url.split('/')[0];
   }
-  if (str.substr(str.length-1, 1) === "-") {
-    str = str.substr(0, str.length-1);
+
+  if (url.indexOf('.') !== -1) {
+    url = url.split('.')[0];
   }
-  return console.log(str)
+  return console.log(url);
 }
 
-dashatize(274)
-dashatize(5311)
-dashatize(-5311)
-dashatize(NaN)
-dashatize(-86320)
-dashatize(0)
-dashatize(-1 )
+domainName("http://google.com");
+domainName("http://google.co.jp");
+domainName("www.xakep.ru");
+domainName("https://youtube.com");
