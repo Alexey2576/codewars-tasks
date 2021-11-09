@@ -1,4 +1,13 @@
-function even_or_odd(number) {
-  return number%2 === 0 ? "Even" : "Odd"
+function positiveSum(arr) {
+  let sum = 0;
+  if (arr.length !== 0) {
+    arr.forEach(el => {
+      if (el > 0)
+        sum+=el;
+    })
+    return sum;
+  }
+  else return 0;
 }
-console.log(even_or_odd(2))
+
+console.log(positiveSum([1,2,3,4,5]))
