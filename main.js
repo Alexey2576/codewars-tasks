@@ -1,13 +1,12 @@
-function positiveSum(arr) {
-  let sum = 0;
-  if (arr.length !== 0) {
-    arr.forEach(el => {
-      if (el > 0)
-        sum+=el;
-    })
-    return sum;
+function generateShape(integer){
+  let str = ""
+  for (let i = 0; i < integer; i++) {
+    for (let i = 0; i < integer; i++) {
+      str += "+"
+    }
+    str+="\n"
   }
-  else return 0;
+  return str.substr(0, str.length-1)
 }
 
-console.log(positiveSum([1,2,3,4,5]))
+console.log(generateShape(8))
