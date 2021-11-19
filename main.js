@@ -1,3 +1,3 @@
-function cockroachSpeed(s) {
-  return parseInt(s * 100000 / 3600)
+function otherAngle(a, b) {
+  return 180-a-b;
 }
