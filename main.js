@@ -1,5 +1,5 @@
-function paperwork(n, m) {
-  if (n < 0 || m < 0)
-    return 0
-  else return n * m
+function countSheeps(arrayOfSheep) {
+  let i = 0;
+  arrayOfSheep.forEach(t => t && i++)
+  return i
 }
