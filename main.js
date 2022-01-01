@@ -1,9 +1,6 @@
-function updateLight(current) {
-  if (current === "green") return "yellow"
-  if (current === "yellow") return "red"
-  if (current === "red") return "green"
+function checkForFactor (base, factor) {
+  return base % factor === 0 && true
 }
 
-console.log(updateLight("green"))
-console.log(updateLight("red"))
-console.log(updateLight("yellow"))
+console.log(checkForFactor(10,2))
+console.log(checkForFactor(653,7))
