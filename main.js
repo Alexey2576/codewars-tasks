@@ -1,8 +1,9 @@
-function abbrevName(name){
-  const mass = name.toString().split(" ")
-  const str = mass[0].substring(0, 1).toUpperCase() + "." + mass[1].substring(0, 1).toUpperCase()
-  return str
+function updateLight(current) {
+  if (current === "green") return "yellow"
+  if (current === "yellow") return "red"
+  if (current === "red") return "green"
 }
 
-console.log(abbrevName("Sam Harris"))
-console.log(abbrevName("Patrick Feenan"))
+console.log(updateLight("green"))
+console.log(updateLight("red"))
+console.log(updateLight("yellow"))
