@@ -1,13 +1,16 @@
-const cannonsReady = (gunners) => {
-  for (let item in gunners) {
-    if (gunners[item] === 'nay')
-      return 'Shiver me timbers!'
+function shortcut (string) {
+  let mass = string.toString().split('')
+  let newMass = []
+  let mass2 = ['a', 'e', 'i', 'o', 'u']
+  for (let item in mass) {
+    if (!mass2.includes(mass[item]))
+      newMass.push(mass[item])
   }
-  return 'Fire!'
+  return newMass.join('')
 }
 
-const a = {'Mike': 'aye', 'Joe': 'aye', 'Johnson': 'aye', 'Peter': 'aye'},
-  b = {'Mike': 'aye', 'Joe': 'nay', 'Johnson': 'aye', 'Peter': 'aye'};
-
-console.log(cannonsReady(a))
-console.log(cannonsReady(b))
+console.log(shortcut('hello'))
+console.log(shortcut('how are you today?'))
+console.log(shortcut('complain'))
+console.log(shortcut('never'))
+console.log(shortcut('HELLO'))
