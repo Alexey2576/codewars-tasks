@@ -1,11 +1,6 @@
-function findNextSquare(sq) {
-  let n = Math.sqrt(sq)
-  if(Number.isInteger(n) > 0) return Math.pow(n+1, 2)
-  return -1;
+function find_average(array) {
+  let sum = array.reduce(function (sum, current) {
+    return sum + current
+  }, 0)
+  return array.length !== 0 ? sum / array.length : 0
 }
-
-console.log(findNextSquare(121))
-console.log(findNextSquare(625))
-console.log(findNextSquare(319225))
-console.log(findNextSquare(15241383936))
-console.log(findNextSquare(155))
