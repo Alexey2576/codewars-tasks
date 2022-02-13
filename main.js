@@ -1,6 +1,8 @@
-function find_average(array) {
-  let sum = array.reduce(function (sum, current) {
-    return sum + current
-  }, 0)
-  return array.length !== 0 ? sum / array.length : 0
+function validatePIN (pin) {
+  const regex = /^\d+$/
+  if (pin.length === 4 || pin.length === 6)
+    return regex.test(pin)
+  return false
 }
+
+console.log(validatePIN("1230"))
