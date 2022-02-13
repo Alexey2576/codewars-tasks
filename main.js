@@ -1,11 +1,13 @@
-function well(x) {
-  let i = 0;
-  x.forEach(n => n === 'good' && i++)
-  if (i > 2) return "I smell a series!"
-  if (i > 0 && i <= 2) return "Publish!"
-  return "Fail!"
+function arrayDiff(a, b) {
+  let newMass = []
+  for (let i = 0; i < a.length; i++) {
+    let idx = b.indexOf(a[i])
+    idx < 0 && newMass.push(a[i])
+  }
+  return newMass
 }
 
-console.log(well([`bad`, 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad']))
-console.log(well(['good', 'bad', 'bad', 'bad', 'bad', 'good', 'bad', 'bad', 'good']))
+console.log(arrayDiff([], [4,5]))
+console.log(arrayDiff([3,4], [3]))
+console.log(arrayDiff([1,8,2], []))
+console.log(arrayDiff([1,2,3], [1,2]))
