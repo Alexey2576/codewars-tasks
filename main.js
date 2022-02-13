@@ -1,8 +1,6 @@
-function validatePIN (pin) {
-  const regex = /^\d+$/
-  if (pin.length === 4 || pin.length === 6)
-    return regex.test(pin)
+function isTriangle(a,b,c)
+{
+  if (a > 0 && b > 0 && c > 0)
+    return (a + b) > c && (b + c) > a && (a + c) > b
   return false
 }
-
-console.log(validatePIN("1230"))
